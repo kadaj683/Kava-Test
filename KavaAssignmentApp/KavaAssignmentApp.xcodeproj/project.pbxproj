@@ -1,0 +1,586 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9601B48A18E5881900108251 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9601B48918E5881900108251 /* Foundation.framework */; };
+		9601B48C18E5881900108251 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9601B48B18E5881900108251 /* CoreGraphics.framework */; };
+		9601B48E18E5881900108251 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9601B48D18E5881900108251 /* UIKit.framework */; };
+		9601B49018E5881900108251 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9601B48F18E5881900108251 /* CoreData.framework */; };
+		9601B49618E5881900108251 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9601B49418E5881900108251 /* InfoPlist.strings */; };
+		9601B49818E5881900108251 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9601B49718E5881900108251 /* main.m */; };
+		9601B49C18E5881900108251 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9601B49B18E5881900108251 /* AppDelegate.m */; };
+		9601B49F18E5881900108251 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9601B49D18E5881900108251 /* Main.storyboard */; };
+		9601B4A218E5881900108251 /* KavaAssignmentApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9601B4A018E5881900108251 /* KavaAssignmentApp.xcdatamodeld */; };
+		9601B4A518E5881900108251 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9601B4A418E5881900108251 /* FirstViewController.m */; };
+		9601B4A818E5881900108251 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9601B4A718E5881900108251 /* SecondViewController.m */; };
+		9601B4AA18E5881900108251 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9601B4A918E5881900108251 /* Images.xcassets */; };
+		9601B4B118E5881A00108251 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9601B4B018E5881A00108251 /* XCTest.framework */; };
+		9601B4B218E5881A00108251 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9601B48918E5881900108251 /* Foundation.framework */; };
+		9601B4B318E5881A00108251 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9601B48D18E5881900108251 /* UIKit.framework */; };
+		9601B4B418E5881A00108251 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9601B48F18E5881900108251 /* CoreData.framework */; };
+		9601B4BC18E5881A00108251 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9601B4BA18E5881A00108251 /* InfoPlist.strings */; };
+		9601B4BE18E5881A00108251 /* KavaAssignmentAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9601B4BD18E5881A00108251 /* KavaAssignmentAppTests.m */; };
+		9601B4D218E5891900108251 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9601B4D118E5891900108251 /* libOCMock.a */; };
+		9601B4D418E8225900108251 /* testAvatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 9601B4D318E8225900108251 /* testAvatar.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9601B4B518E5881A00108251 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9601B47E18E5881900108251 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9601B48518E5881900108251;
+			remoteInfo = KavaAssignmentApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9601B48618E5881900108251 /* KavaAssignmentApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KavaAssignmentApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9601B48918E5881900108251 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9601B48B18E5881900108251 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9601B48D18E5881900108251 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9601B48F18E5881900108251 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		9601B49318E5881900108251 /* KavaAssignmentApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KavaAssignmentApp-Info.plist"; sourceTree = "<group>"; };
+		9601B49518E5881900108251 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9601B49718E5881900108251 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9601B49918E5881900108251 /* KavaAssignmentApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KavaAssignmentApp-Prefix.pch"; sourceTree = "<group>"; };
+		9601B49A18E5881900108251 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9601B49B18E5881900108251 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9601B49E18E5881900108251 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9601B4A118E5881900108251 /* KavaAssignmentApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KavaAssignmentApp.xcdatamodel; sourceTree = "<group>"; };
+		9601B4A318E5881900108251 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		9601B4A418E5881900108251 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		9601B4A618E5881900108251 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		9601B4A718E5881900108251 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		9601B4A918E5881900108251 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9601B4AF18E5881A00108251 /* KavaAssignmentAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KavaAssignmentAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9601B4B018E5881A00108251 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		9601B4B918E5881A00108251 /* KavaAssignmentAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KavaAssignmentAppTests-Info.plist"; sourceTree = "<group>"; };
+		9601B4BB18E5881A00108251 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9601B4BD18E5881A00108251 /* KavaAssignmentAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KavaAssignmentAppTests.m; sourceTree = "<group>"; };
+		9601B4CA18E5891900108251 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
+		9601B4CB18E5891900108251 /* OCMArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMArg.h; sourceTree = "<group>"; };
+		9601B4CC18E5891900108251 /* OCMConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMConstraint.h; sourceTree = "<group>"; };
+		9601B4CD18E5891900108251 /* OCMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMock.h; sourceTree = "<group>"; };
+		9601B4CE18E5891900108251 /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockObject.h; sourceTree = "<group>"; };
+		9601B4CF18E5891900108251 /* OCMockRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockRecorder.h; sourceTree = "<group>"; };
+		9601B4D118E5891900108251 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOCMock.a; sourceTree = "<group>"; };
+		9601B4D318E8225900108251 /* testAvatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = testAvatar.png; path = ../../../../Downloads/testAvatar.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9601B48318E5881900108251 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9601B48C18E5881900108251 /* CoreGraphics.framework in Frameworks */,
+				9601B49018E5881900108251 /* CoreData.framework in Frameworks */,
+				9601B48E18E5881900108251 /* UIKit.framework in Frameworks */,
+				9601B48A18E5881900108251 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9601B4AC18E5881A00108251 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9601B4B118E5881A00108251 /* XCTest.framework in Frameworks */,
+				9601B4B418E5881A00108251 /* CoreData.framework in Frameworks */,
+				9601B4B318E5881A00108251 /* UIKit.framework in Frameworks */,
+				9601B4B218E5881A00108251 /* Foundation.framework in Frameworks */,
+				9601B4D218E5891900108251 /* libOCMock.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9601B47D18E5881900108251 = {
+			isa = PBXGroup;
+			children = (
+				9601B4C718E5891900108251 /* usr */,
+				9601B49118E5881900108251 /* KavaAssignmentApp */,
+				9601B4B718E5881A00108251 /* KavaAssignmentAppTests */,
+				9601B48818E5881900108251 /* Frameworks */,
+				9601B48718E5881900108251 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9601B48718E5881900108251 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9601B48618E5881900108251 /* KavaAssignmentApp.app */,
+				9601B4AF18E5881A00108251 /* KavaAssignmentAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9601B48818E5881900108251 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9601B48918E5881900108251 /* Foundation.framework */,
+				9601B48B18E5881900108251 /* CoreGraphics.framework */,
+				9601B48D18E5881900108251 /* UIKit.framework */,
+				9601B48F18E5881900108251 /* CoreData.framework */,
+				9601B4B018E5881A00108251 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9601B49118E5881900108251 /* KavaAssignmentApp */ = {
+			isa = PBXGroup;
+			children = (
+				9601B4D318E8225900108251 /* testAvatar.png */,
+				9601B49A18E5881900108251 /* AppDelegate.h */,
+				9601B49B18E5881900108251 /* AppDelegate.m */,
+				9601B49D18E5881900108251 /* Main.storyboard */,
+				9601B4A318E5881900108251 /* FirstViewController.h */,
+				9601B4A418E5881900108251 /* FirstViewController.m */,
+				9601B4A618E5881900108251 /* SecondViewController.h */,
+				9601B4A718E5881900108251 /* SecondViewController.m */,
+				9601B4A918E5881900108251 /* Images.xcassets */,
+				9601B4A018E5881900108251 /* KavaAssignmentApp.xcdatamodeld */,
+				9601B49218E5881900108251 /* Supporting Files */,
+			);
+			path = KavaAssignmentApp;
+			sourceTree = "<group>";
+		};
+		9601B49218E5881900108251 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9601B49318E5881900108251 /* KavaAssignmentApp-Info.plist */,
+				9601B49418E5881900108251 /* InfoPlist.strings */,
+				9601B49718E5881900108251 /* main.m */,
+				9601B49918E5881900108251 /* KavaAssignmentApp-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9601B4B718E5881A00108251 /* KavaAssignmentAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				9601B4BD18E5881A00108251 /* KavaAssignmentAppTests.m */,
+				9601B4B818E5881A00108251 /* Supporting Files */,
+			);
+			path = KavaAssignmentAppTests;
+			sourceTree = "<group>";
+		};
+		9601B4B818E5881A00108251 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9601B4B918E5881A00108251 /* KavaAssignmentAppTests-Info.plist */,
+				9601B4BA18E5881A00108251 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9601B4C718E5891900108251 /* usr */ = {
+			isa = PBXGroup;
+			children = (
+				9601B4C818E5891900108251 /* include */,
+				9601B4D018E5891900108251 /* lib */,
+			);
+			path = usr;
+			sourceTree = "<group>";
+		};
+		9601B4C818E5891900108251 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				9601B4C918E5891900108251 /* OCMock */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		9601B4C918E5891900108251 /* OCMock */ = {
+			isa = PBXGroup;
+			children = (
+				9601B4CA18E5891900108251 /* NSNotificationCenter+OCMAdditions.h */,
+				9601B4CB18E5891900108251 /* OCMArg.h */,
+				9601B4CC18E5891900108251 /* OCMConstraint.h */,
+				9601B4CD18E5891900108251 /* OCMock.h */,
+				9601B4CE18E5891900108251 /* OCMockObject.h */,
+				9601B4CF18E5891900108251 /* OCMockRecorder.h */,
+			);
+			path = OCMock;
+			sourceTree = "<group>";
+		};
+		9601B4D018E5891900108251 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				9601B4D118E5891900108251 /* libOCMock.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9601B48518E5881900108251 /* KavaAssignmentApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9601B4C118E5881A00108251 /* Build configuration list for PBXNativeTarget "KavaAssignmentApp" */;
+			buildPhases = (
+				9601B48218E5881900108251 /* Sources */,
+				9601B48318E5881900108251 /* Frameworks */,
+				9601B48418E5881900108251 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KavaAssignmentApp;
+			productName = KavaAssignmentApp;
+			productReference = 9601B48618E5881900108251 /* KavaAssignmentApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9601B4AE18E5881A00108251 /* KavaAssignmentAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9601B4C418E5881A00108251 /* Build configuration list for PBXNativeTarget "KavaAssignmentAppTests" */;
+			buildPhases = (
+				9601B4AB18E5881A00108251 /* Sources */,
+				9601B4AC18E5881A00108251 /* Frameworks */,
+				9601B4AD18E5881A00108251 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9601B4B618E5881A00108251 /* PBXTargetDependency */,
+			);
+			name = KavaAssignmentAppTests;
+			productName = KavaAssignmentAppTests;
+			productReference = 9601B4AF18E5881A00108251 /* KavaAssignmentAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9601B47E18E5881900108251 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "___FULLUSERNAME___";
+				TargetAttributes = {
+					9601B4AE18E5881A00108251 = {
+						TestTargetID = 9601B48518E5881900108251;
+					};
+				};
+			};
+			buildConfigurationList = 9601B48118E5881900108251 /* Build configuration list for PBXProject "KavaAssignmentApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9601B47D18E5881900108251;
+			productRefGroup = 9601B48718E5881900108251 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9601B48518E5881900108251 /* KavaAssignmentApp */,
+				9601B4AE18E5881A00108251 /* KavaAssignmentAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9601B48418E5881900108251 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9601B4D418E8225900108251 /* testAvatar.png in Resources */,
+				9601B4AA18E5881900108251 /* Images.xcassets in Resources */,
+				9601B49618E5881900108251 /* InfoPlist.strings in Resources */,
+				9601B49F18E5881900108251 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9601B4AD18E5881A00108251 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9601B4BC18E5881A00108251 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9601B48218E5881900108251 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9601B4A818E5881900108251 /* SecondViewController.m in Sources */,
+				9601B49C18E5881900108251 /* AppDelegate.m in Sources */,
+				9601B49818E5881900108251 /* main.m in Sources */,
+				9601B4A218E5881900108251 /* KavaAssignmentApp.xcdatamodeld in Sources */,
+				9601B4A518E5881900108251 /* FirstViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9601B4AB18E5881A00108251 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9601B4BE18E5881A00108251 /* KavaAssignmentAppTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9601B4B618E5881A00108251 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9601B48518E5881900108251 /* KavaAssignmentApp */;
+			targetProxy = 9601B4B518E5881A00108251 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9601B49418E5881900108251 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9601B49518E5881900108251 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		9601B49D18E5881900108251 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9601B49E18E5881900108251 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9601B4BA18E5881A00108251 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9601B4BB18E5881A00108251 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9601B4BF18E5881A00108251 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9601B4C018E5881A00108251 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9601B4C218E5881A00108251 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KavaAssignmentApp/KavaAssignmentApp-Prefix.pch";
+				INFOPLIST_FILE = "KavaAssignmentApp/KavaAssignmentApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9601B4C318E5881A00108251 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KavaAssignmentApp/KavaAssignmentApp-Prefix.pch";
+				INFOPLIST_FILE = "KavaAssignmentApp/KavaAssignmentApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		9601B4C518E5881A00108251 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/KavaAssignmentApp.app/KavaAssignmentApp";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KavaAssignmentApp/KavaAssignmentApp-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/usr/include",
+				);
+				INFOPLIST_FILE = "KavaAssignmentAppTests/KavaAssignmentAppTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/usr/lib",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-force_load",
+					"\"$(SRCROOT)/usr/lib/libOCMock.a\"",
+					"-ObjC",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		9601B4C618E5881A00108251 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/KavaAssignmentApp.app/KavaAssignmentApp";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KavaAssignmentApp/KavaAssignmentApp-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/usr/include",
+				);
+				INFOPLIST_FILE = "KavaAssignmentAppTests/KavaAssignmentAppTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/usr/lib",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-force_load",
+					"\"$(SRCROOT)/usr/lib/libOCMock.a\"",
+					"-ObjC",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9601B48118E5881900108251 /* Build configuration list for PBXProject "KavaAssignmentApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9601B4BF18E5881A00108251 /* Debug */,
+				9601B4C018E5881A00108251 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9601B4C118E5881A00108251 /* Build configuration list for PBXNativeTarget "KavaAssignmentApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9601B4C218E5881A00108251 /* Debug */,
+				9601B4C318E5881A00108251 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9601B4C418E5881A00108251 /* Build configuration list for PBXNativeTarget "KavaAssignmentAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9601B4C518E5881A00108251 /* Debug */,
+				9601B4C618E5881A00108251 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9601B4A018E5881900108251 /* KavaAssignmentApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9601B4A118E5881900108251 /* KavaAssignmentApp.xcdatamodel */,
+			);
+			currentVersion = 9601B4A118E5881900108251 /* KavaAssignmentApp.xcdatamodel */;
+			path = KavaAssignmentApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 9601B47E18E5881900108251 /* Project object */;
+}

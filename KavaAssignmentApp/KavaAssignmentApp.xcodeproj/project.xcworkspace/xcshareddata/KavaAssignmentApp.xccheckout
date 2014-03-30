@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>266348E8-C31A-48DC-9CB5-6F823BF70891</string>
+	<key>IDESourceControlProjectName</key>
+	<string>KavaAssignmentApp</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>2282FDCB-9C27-4EB6-8411-6269B4740808</key>
+		<string>https://github.com/kadaj683/Kava-Test.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>KavaAssignmentApp/KavaAssignmentApp.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>2282FDCB-9C27-4EB6-8411-6269B4740808</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/kadaj683/Kava-Test.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>2282FDCB-9C27-4EB6-8411-6269B4740808</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2282FDCB-9C27-4EB6-8411-6269B4740808</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Kava-Test</string>
+		</dict>
+	</array>
+</dict>
+</plist>
