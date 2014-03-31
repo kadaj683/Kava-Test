@@ -138,30 +138,74 @@
 
 - (void) leaveEditMode
 {
-
+    self.editMode = NO;
+    self.firstName.enabled = NO;
+    self.lastName.enabled = NO;
+    self.birthday.enabled = NO;
+    self.contacts.editable = NO;
+    self.bio.editable = NO;
+    self.navigationItem.leftBarButtonItem.title = @"Edit";
+    self.changeImageButton.hidden = YES;
+    self.setDateButton.hidden = YES;
 }
 
 - (void) enterEditMode
 {
- 
+    self.editMode = YES;
+    self.firstName.enabled = YES;
+    self.lastName.enabled = YES;
+    //self.birthday.enabled = YES;
+    //self.birthday.delegate = self;
+    self.contacts.editable = YES;
+    self.bio.editable = YES;
+    self.navigationItem.leftBarButtonItem.title = @"Done";
+    self.changeImageButton.hidden = NO;
+    self.setDateButton.hidden = NO;
 }
 
 - (void)fillInfo
 {
-
+    self.firstName.text = self.info.firstName;
+    self.lastName.text = self.info.lastName;
+    self.birthday.text = [NSDateFormatter localizedStringFromDate:self.info.birthday dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterNoStyle];
+    self.image.image = [UIImage imageWithData:self.info.avatar];
+    self.contacts.text = self.info.contacts;
+    self.bio.text = self.info.bio;
     
 }
 
 - (BOOL)inputInfo: (NSError* __autoreleasing *) error
 {
- 
+    self.info.firstName = self.firstName.text;
+    self.info.lastName = self.lastName.text;
+    if(self.editedBirthday) {
+        self.info.birthday = self.editedBirthday;
+    }
+    self.info.contacts = self.contacts.text;
+    self.info.bio = self.bio.text;
+    self.info.avatar = UIImagePNGRepresentation(self.image.image);
     return YES;
 
 }
 
 - (void) fetchData
 {
-
+    NSError *error;
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"UserInfo"
+                                              inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    NSArray *fetchedObjects = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    if (fetchedObjects.count>1) @throw [NSException exceptionWithName:@"InvalidStorageException" reason:@"Storage is corrupted" userInfo:nil];
+    if(fetchedObjects.count>0) {
+        self.info = [fetchedObjects objectAtIndex:0];
+        [self fillInfo];
+        [self leaveEditMode];
+    } else {
+        self.info = [NSEntityDescription insertNewObjectForEntityForName:@"UserInfo" inManagedObjectContext:self.managedObjectContext];
+        [self enterEditMode];
+    }
 }
 /*#pragma mark - Table view data source
 
