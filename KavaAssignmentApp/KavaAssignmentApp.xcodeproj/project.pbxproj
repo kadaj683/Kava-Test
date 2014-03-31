@@ -16,17 +16,18 @@
 		9601B49C18E5881900108251 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9601B49B18E5881900108251 /* AppDelegate.m */; };
 		9601B49F18E5881900108251 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9601B49D18E5881900108251 /* Main.storyboard */; };
 		9601B4A218E5881900108251 /* KavaAssignmentApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9601B4A018E5881900108251 /* KavaAssignmentApp.xcdatamodeld */; };
-		9601B4A518E5881900108251 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9601B4A418E5881900108251 /* FirstViewController.m */; };
-		9601B4A818E5881900108251 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9601B4A718E5881900108251 /* SecondViewController.m */; };
 		9601B4AA18E5881900108251 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9601B4A918E5881900108251 /* Images.xcassets */; };
 		9601B4B118E5881A00108251 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9601B4B018E5881A00108251 /* XCTest.framework */; };
 		9601B4B218E5881A00108251 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9601B48918E5881900108251 /* Foundation.framework */; };
 		9601B4B318E5881A00108251 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9601B48D18E5881900108251 /* UIKit.framework */; };
 		9601B4B418E5881A00108251 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9601B48F18E5881900108251 /* CoreData.framework */; };
 		9601B4BC18E5881A00108251 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9601B4BA18E5881A00108251 /* InfoPlist.strings */; };
-		9601B4BE18E5881A00108251 /* KavaAssignmentAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9601B4BD18E5881A00108251 /* KavaAssignmentAppTests.m */; };
 		9601B4D218E5891900108251 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9601B4D118E5891900108251 /* libOCMock.a */; };
 		9601B4D418E8225900108251 /* testAvatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 9601B4D318E8225900108251 /* testAvatar.png */; };
+		9678A95618E870A0006C8DA6 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9678A95518E870A0006C8DA6 /* UserInfo.m */; };
+		9678A95918E87201006C8DA6 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9678A95818E87201006C8DA6 /* UserInfoViewController.m */; };
+		9678A95E18E87BF7006C8DA6 /* UserInfoViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9678A95D18E87BF7006C8DA6 /* UserInfoViewControllerTests.m */; };
+		9678A96918E9D079006C8DA6 /* DatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9678A96818E9D079006C8DA6 /* DatePickerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,16 +54,11 @@
 		9601B49B18E5881900108251 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9601B49E18E5881900108251 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9601B4A118E5881900108251 /* KavaAssignmentApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KavaAssignmentApp.xcdatamodel; sourceTree = "<group>"; };
-		9601B4A318E5881900108251 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		9601B4A418E5881900108251 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		9601B4A618E5881900108251 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		9601B4A718E5881900108251 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		9601B4A918E5881900108251 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9601B4AF18E5881A00108251 /* KavaAssignmentAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KavaAssignmentAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9601B4B018E5881A00108251 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		9601B4B918E5881A00108251 /* KavaAssignmentAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KavaAssignmentAppTests-Info.plist"; sourceTree = "<group>"; };
 		9601B4BB18E5881A00108251 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		9601B4BD18E5881A00108251 /* KavaAssignmentAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KavaAssignmentAppTests.m; sourceTree = "<group>"; };
 		9601B4CA18E5891900108251 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
 		9601B4CB18E5891900108251 /* OCMArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMArg.h; sourceTree = "<group>"; };
 		9601B4CC18E5891900108251 /* OCMConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMConstraint.h; sourceTree = "<group>"; };
@@ -71,6 +67,15 @@
 		9601B4CF18E5891900108251 /* OCMockRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockRecorder.h; sourceTree = "<group>"; };
 		9601B4D118E5891900108251 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOCMock.a; sourceTree = "<group>"; };
 		9601B4D318E8225900108251 /* testAvatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = testAvatar.png; path = ../../../../Downloads/testAvatar.png; sourceTree = "<group>"; };
+		9678A95418E870A0006C8DA6 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserInfo.h; path = ../UserInfo.h; sourceTree = "<group>"; };
+		9678A95518E870A0006C8DA6 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserInfo.m; path = ../UserInfo.m; sourceTree = "<group>"; };
+		9678A95718E87201006C8DA6 /* UserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoViewController.h; sourceTree = "<group>"; };
+		9678A95818E87201006C8DA6 /* UserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoViewController.m; sourceTree = "<group>"; };
+		9678A95D18E87BF7006C8DA6 /* UserInfoViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserInfoViewControllerTests.m; path = ../UserInfoViewControllerTests.m; sourceTree = "<group>"; };
+		9678A95F18E96627006C8DA6 /* UserInfoViewController+Testing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UserInfoViewController+Testing.h"; sourceTree = "<group>"; };
+		9678A96618E96D5D006C8DA6 /* UserInfoTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoTest.h; sourceTree = "<group>"; };
+		9678A96718E9D079006C8DA6 /* DatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerViewController.h; sourceTree = "<group>"; };
+		9678A96818E9D079006C8DA6 /* DatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,17 +140,21 @@
 		9601B49118E5881900108251 /* KavaAssignmentApp */ = {
 			isa = PBXGroup;
 			children = (
+				9678A95418E870A0006C8DA6 /* UserInfo.h */,
+				9678A95518E870A0006C8DA6 /* UserInfo.m */,
+				9678A96618E96D5D006C8DA6 /* UserInfoTest.h */,
 				9601B4D318E8225900108251 /* testAvatar.png */,
 				9601B49A18E5881900108251 /* AppDelegate.h */,
 				9601B49B18E5881900108251 /* AppDelegate.m */,
 				9601B49D18E5881900108251 /* Main.storyboard */,
-				9601B4A318E5881900108251 /* FirstViewController.h */,
-				9601B4A418E5881900108251 /* FirstViewController.m */,
-				9601B4A618E5881900108251 /* SecondViewController.h */,
-				9601B4A718E5881900108251 /* SecondViewController.m */,
 				9601B4A918E5881900108251 /* Images.xcassets */,
 				9601B4A018E5881900108251 /* KavaAssignmentApp.xcdatamodeld */,
 				9601B49218E5881900108251 /* Supporting Files */,
+				9678A95718E87201006C8DA6 /* UserInfoViewController.h */,
+				9678A95F18E96627006C8DA6 /* UserInfoViewController+Testing.h */,
+				9678A95818E87201006C8DA6 /* UserInfoViewController.m */,
+				9678A96718E9D079006C8DA6 /* DatePickerViewController.h */,
+				9678A96818E9D079006C8DA6 /* DatePickerViewController.m */,
 			);
 			path = KavaAssignmentApp;
 			sourceTree = "<group>";
@@ -164,7 +173,7 @@
 		9601B4B718E5881A00108251 /* KavaAssignmentAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				9601B4BD18E5881A00108251 /* KavaAssignmentAppTests.m */,
+				9678A95D18E87BF7006C8DA6 /* UserInfoViewControllerTests.m */,
 				9601B4B818E5881A00108251 /* Supporting Files */,
 			);
 			path = KavaAssignmentAppTests;
@@ -315,11 +324,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9601B4A818E5881900108251 /* SecondViewController.m in Sources */,
+				9678A95918E87201006C8DA6 /* UserInfoViewController.m in Sources */,
 				9601B49C18E5881900108251 /* AppDelegate.m in Sources */,
 				9601B49818E5881900108251 /* main.m in Sources */,
 				9601B4A218E5881900108251 /* KavaAssignmentApp.xcdatamodeld in Sources */,
-				9601B4A518E5881900108251 /* FirstViewController.m in Sources */,
+				9678A96918E9D079006C8DA6 /* DatePickerViewController.m in Sources */,
+				9678A95618E870A0006C8DA6 /* UserInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,7 +337,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9601B4BE18E5881A00108251 /* KavaAssignmentAppTests.m in Sources */,
+				9678A95E18E87BF7006C8DA6 /* UserInfoViewControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,6 +568,7 @@
 				9601B4C318E5881A00108251 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9601B4C418E5881A00108251 /* Build configuration list for PBXNativeTarget "KavaAssignmentAppTests" */ = {
 			isa = XCConfigurationList;
@@ -566,6 +577,7 @@
 				9601B4C618E5881A00108251 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
