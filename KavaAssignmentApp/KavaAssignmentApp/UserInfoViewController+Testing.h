@@ -21,9 +21,12 @@
 
 @property AppDelegate *appDelegate;
 @property NSManagedObjectContext *managedObjectContext;
+@property BOOL facebookDataFetched;
 
 @property UserInfo *info;
 
+- (void) facebookFetch: (void (^) (void)) successHandler onError: (void (^) (NSError *)) errorHandler;
+- (void) prepareInternetConnectionForIP:(NSString *) ip withHandler:(void (^)(BOOL)) errorHandler;
 - (void) leaveEditMode;
 - (void) enterEditMode;
 - (void) fillInfo;

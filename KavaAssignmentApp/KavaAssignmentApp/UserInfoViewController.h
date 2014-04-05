@@ -7,9 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FacebookSDK/FacebookSDK.h>
 
-@interface UserInfoViewController : UITableViewController<UINavigationControllerDelegate,UITextFieldDelegate,UIImagePickerControllerDelegate>
--(BOOL) textFieldShouldReturn:(UITextField *)textField;
+@interface UserInfoViewController : UITableViewController<UINavigationControllerDelegate,UITextFieldDelegate,UIImagePickerControllerDelegate,FBUserSettingsDelegate,NSURLSessionDataDelegate>
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField;
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info;
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker;
+- (void)loginViewController:(id)sender receivedError:(NSError *)error;
+- (void)loginViewControllerWillLogUserOut:(id)sender;
+- (void)loginViewControllerDidLogUserOut:(id)sender;
+- (void)loginViewControllerDidLogUserIn:(id)sender;
+
 @end

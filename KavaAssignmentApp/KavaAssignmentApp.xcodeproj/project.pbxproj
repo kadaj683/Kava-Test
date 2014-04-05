@@ -28,6 +28,14 @@
 		9678A95E18E87BF7006C8DA6 /* UserInfoViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9678A95D18E87BF7006C8DA6 /* UserInfoViewControllerTests.m */; };
 		9678A96918E9D079006C8DA6 /* DatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9678A96818E9D079006C8DA6 /* DatePickerViewController.m */; };
 		9689EFFE18EB0D6C00FA4E28 /* testAvatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 9689EFFD18EB0D6C00FA4E28 /* testAvatar.png */; };
+		9693BD7418F08CF2001A9060 /* FacebookIntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9693BD7318F08CF2001A9060 /* FacebookIntegrationTests.m */; };
+		9693BD7518F08D0F001A9060 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9678A95818E87201006C8DA6 /* UserInfoViewController.m */; };
+		9693BD7718F08E4A001A9060 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9693BD7618F08E4A001A9060 /* SystemConfiguration.framework */; };
+		9693BD7818F08E58001A9060 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9693BD7618F08E4A001A9060 /* SystemConfiguration.framework */; };
+		96ECC96B18ECBBDB002D7EB0 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96ECC96A18ECBBDB002D7EB0 /* FacebookSDK.framework */; };
+		96ECC96C18ECBBDB002D7EB0 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96ECC96A18ECBBDB002D7EB0 /* FacebookSDK.framework */; };
+		96ECC96E18ECD215002D7EB0 /* FBUserSettingsViewResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 96ECC96D18ECD215002D7EB0 /* FBUserSettingsViewResources.bundle */; };
+		96ECC96F18ECD215002D7EB0 /* FBUserSettingsViewResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 96ECC96D18ECD215002D7EB0 /* FBUserSettingsViewResources.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +84,10 @@
 		9678A96718E9D079006C8DA6 /* DatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerViewController.h; sourceTree = "<group>"; };
 		9678A96818E9D079006C8DA6 /* DatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerViewController.m; sourceTree = "<group>"; };
 		9689EFFD18EB0D6C00FA4E28 /* testAvatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = testAvatar.png; path = ../testAvatar.png; sourceTree = "<group>"; };
+		9693BD7318F08CF2001A9060 /* FacebookIntegrationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FacebookIntegrationTests.m; path = ../KavaAssignmentApp/FacebookIntegrationTests.m; sourceTree = "<group>"; };
+		9693BD7618F08E4A001A9060 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		96ECC96A18ECBBDB002D7EB0 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		96ECC96D18ECD215002D7EB0 /* FBUserSettingsViewResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBUserSettingsViewResources.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +95,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9693BD7718F08E4A001A9060 /* SystemConfiguration.framework in Frameworks */,
 				9601B48C18E5881900108251 /* CoreGraphics.framework in Frameworks */,
+				96ECC96B18ECBBDB002D7EB0 /* FacebookSDK.framework in Frameworks */,
 				9601B49018E5881900108251 /* CoreData.framework in Frameworks */,
 				9601B48E18E5881900108251 /* UIKit.framework in Frameworks */,
 				9601B48A18E5881900108251 /* Foundation.framework in Frameworks */,
@@ -94,11 +108,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9693BD7818F08E58001A9060 /* SystemConfiguration.framework in Frameworks */,
 				9601B4B118E5881A00108251 /* XCTest.framework in Frameworks */,
 				9601B4B418E5881A00108251 /* CoreData.framework in Frameworks */,
 				9601B4B318E5881A00108251 /* UIKit.framework in Frameworks */,
 				9601B4B218E5881A00108251 /* Foundation.framework in Frameworks */,
 				9601B4D218E5891900108251 /* libOCMock.a in Frameworks */,
+				96ECC96C18ECBBDB002D7EB0 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +124,7 @@
 		9601B47D18E5881900108251 = {
 			isa = PBXGroup;
 			children = (
+				96ECC96A18ECBBDB002D7EB0 /* FacebookSDK.framework */,
 				9601B4C718E5891900108251 /* usr */,
 				9601B49118E5881900108251 /* KavaAssignmentApp */,
 				9601B4B718E5881A00108251 /* KavaAssignmentAppTests */,
@@ -128,6 +145,7 @@
 		9601B48818E5881900108251 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9693BD7618F08E4A001A9060 /* SystemConfiguration.framework */,
 				9601B48918E5881900108251 /* Foundation.framework */,
 				9601B48B18E5881900108251 /* CoreGraphics.framework */,
 				9601B48D18E5881900108251 /* UIKit.framework */,
@@ -147,6 +165,7 @@
 				9601B49A18E5881900108251 /* AppDelegate.h */,
 				9601B49B18E5881900108251 /* AppDelegate.m */,
 				9601B49D18E5881900108251 /* Main.storyboard */,
+				96ECC96D18ECD215002D7EB0 /* FBUserSettingsViewResources.bundle */,
 				9601B4A918E5881900108251 /* Images.xcassets */,
 				9601B4A018E5881900108251 /* KavaAssignmentApp.xcdatamodeld */,
 				9601B49218E5881900108251 /* Supporting Files */,
@@ -174,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				9678A95D18E87BF7006C8DA6 /* UserInfoViewControllerTests.m */,
+				9693BD7318F08CF2001A9060 /* FacebookIntegrationTests.m */,
 				9601B4B818E5881A00108251 /* Supporting Files */,
 			);
 			path = KavaAssignmentAppTests;
@@ -306,6 +326,7 @@
 				9601B4AA18E5881900108251 /* Images.xcassets in Resources */,
 				9601B49618E5881900108251 /* InfoPlist.strings in Resources */,
 				9601B49F18E5881900108251 /* Main.storyboard in Resources */,
+				96ECC96E18ECD215002D7EB0 /* FBUserSettingsViewResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +334,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96ECC96F18ECD215002D7EB0 /* FBUserSettingsViewResources.bundle in Resources */,
 				9601B4BC18E5881A00108251 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,7 +359,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9693BD7418F08CF2001A9060 /* FacebookIntegrationTests.m in Sources */,
 				9678A95E18E87BF7006C8DA6 /* UserInfoViewControllerTests.m in Sources */,
+				9693BD7518F08D0F001A9060 /* UserInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,9 +478,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KavaAssignmentApp/KavaAssignmentApp-Prefix.pch";
 				INFOPLIST_FILE = "KavaAssignmentApp/KavaAssignmentApp-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -467,9 +496,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KavaAssignmentApp/KavaAssignmentApp-Prefix.pch";
 				INFOPLIST_FILE = "KavaAssignmentApp/KavaAssignmentApp-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -483,6 +517,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KavaAssignmentApp/KavaAssignmentApp-Prefix.pch";
@@ -522,6 +557,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "KavaAssignmentApp/KavaAssignmentApp-Prefix.pch";

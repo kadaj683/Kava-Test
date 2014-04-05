@@ -6,6 +6,10 @@
 //  Copyright (c) 2014 kadaj. All rights reserved.
 //
 
+#import <SystemConfiguration/SystemConfiguration.h>
+#import <netdb.h>
+#import <arpa/inet.h>
+
 #import "UserInfoViewController.h"
 #import "UserInfoViewController+Testing.h"
 #import "AppDelegate.h"
@@ -22,6 +26,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *changeImageButton;
 //@property (nonatomic) UIDatePicker *picker;
 @property (weak, nonatomic) IBOutlet UIButton *setDateButton;
+
+@property FBUserSettingsViewController *settings;
 @property UserInfo *info;
 @property NSDate *editedBirthday;
 
@@ -30,6 +36,9 @@
 @property AppDelegate *appDelegate;
 
 @property BOOL editMode;
+@property BOOL facebookDataFetched;
+
+@property (readonly) NSArray *permissions;
 
 @end
 
@@ -42,12 +51,9 @@
     if (self.editMode) {
         NSError *inputError;
         if ([self inputInfo:&inputError]) {
-            NSError *saveError;
-            if(![self.managedObjectContext save:&saveError])
-            {
-                NSLog(@"Couldn't save data: %@", [saveError localizedDescription]);
-            }
+            [self saveData];
             [self leaveEditMode];
+            [self fillInfo];
         }
         
     } else {
@@ -55,6 +61,7 @@
     }
     
 }
+
 
 - (IBAction)changeImageClick:(id)sender
 {
@@ -77,14 +84,20 @@
     self.birthday.text = [NSDateFormatter localizedStringFromDate:self.editedBirthday dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterNoStyle];
 }
 
--(BOOL) textFieldShouldReturn:(UITextField *)textField{
+- (BOOL) textFieldShouldReturn:(UITextField *)textField{
     
     [textField resignFirstResponder];
     return YES;
 }
 
+- (BOOL) facebookDataFetched {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"facebookDataFetched"];
+}
 
-
+- (void) setFacebookDataFetched:(BOOL)facebookDataFetched {
+    [[NSUserDefaults standardUserDefaults] setBool:facebookDataFetched forKey:@"facebookDataFetched"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
 
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
@@ -111,6 +124,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if (!_permissions) _permissions = @[@"basic_info", @"email",@"user_about_me",@"user_birthday"];
     self.appDelegate = ((AppDelegate *)[[UIApplication sharedApplication] delegate]);
     
     self.managedObjectContext = self.appDelegate.managedObjectContext;
@@ -120,20 +134,78 @@
     
     [self fetchData];
     
-    
 
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
 }
 
-- (void)didReceiveMemoryWarning
+- (void) saveData
+{
+    NSError *saveError;
+    if(![self.managedObjectContext save:&saveError])
+    {
+        NSLog(@"Couldn't save data: %@", [saveError localizedDescription]);
+    }
+    
+}
+
+- (void) prepareInternetConnectionForIP:(NSString *) ip withHandler:(void (^)(BOOL)) handler {
+
+
+
+    
+}
+
+- (void) didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) facebookFetch: (void (^) (void)) successHandler onError: (void (^) (NSError *)) errorHandler
+{
+
+
+}
+
+- (void) loginViewController:(id)sender receivedError:(NSError *)error
+{
+
+    
+}
+
+- (void) loginViewControllerWillLogUserOut:(id)sender
+{
+    
+}
+
+- (void) loginViewControllerDidLogUserOut:(id)sender
+{
+
+}
+
+- (void) loginViewControllerDidLogUserIn:(id)sender
+{
+
+}
+
+- (void)showMessage:(NSString *)text withTitle:(NSString *)title
+{
+    [[[UIAlertView alloc] initWithTitle:title
+                                message:text
+                               delegate:self
+                      cancelButtonTitle:@"OK"
+                      otherButtonTitles:nil] show];
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"fbSettings"]) {
+        FBUserSettingsViewController *controller = [segue destinationViewController];
+        controller.delegate = self;
+        controller.readPermissions = self.permissions;
+        
+    }
+    
 }
 
 - (void) leaveEditMode

@@ -2,12 +2,27 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>FacebookAppID</key>
+	<string>274382079397540</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>FacebookDisplayName</key>
+	<string>KavaAssignmentApp</string>
 	<key>CFBundleDisplayName</key>
 	<string>${PRODUCT_NAME}</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb274382079397540</string>
+			</array>
+			<key>CFBundleURLName</key>
+			<string>com.example.${PRODUCT_NAME:rfc1034identifier}</string>
+		</dict>
+	</array>
 	<key>CFBundleIdentifier</key>
 	<string>com.example.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>

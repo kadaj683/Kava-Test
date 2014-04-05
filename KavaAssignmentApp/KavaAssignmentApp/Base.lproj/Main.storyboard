@@ -186,6 +186,11 @@
                                 <action selector="editClick:" destination="pQz-90-9Od" id="14a-35-Duh"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="XKa-B8-T5X">
+                            <connections>
+                                <segue destination="KGv-Wh-Nbw" kind="push" identifier="fbSettings" id="6Vp-5V-Cvb"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="bio" destination="LUQ-hr-cKU" id="P5B-ym-kkA"/>
@@ -267,7 +272,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <placeholder placeholderIdentifier="IBFirstResponder" id="483-3B-ae8" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="uqs-Kq-b95" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1655" y="30"/>
+            <point key="canvasLocation" x="1668" y="-147"/>
         </scene>
         <!--Navigation Controller - My info-->
         <scene sceneID="UAW-N8-FxG">
@@ -287,6 +292,25 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VRN-A1-QQS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="680" y="160"/>
+        </scene>
+        <!--User Settings View Controller-->
+        <scene sceneID="IO0-rO-TiW">
+            <objects>
+                <viewController id="KGv-Wh-Nbw" customClass="FBUserSettingsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zp7-N4-ZgL"/>
+                        <viewControllerLayoutGuide type="bottom" id="WYn-fl-2Sn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Hve-mh-kZl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bYs-Oz-3W2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oZX-Wa-HK9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1721" y="537"/>
         </scene>
     </scenes>
     <resources>
