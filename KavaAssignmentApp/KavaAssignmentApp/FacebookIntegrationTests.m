@@ -118,6 +118,7 @@ typedef enum {
     
     [[self.controllerMock expect] fetchData];
     [self.controller loginViewControllerDidLogUserIn:self];
+    [[NSRunLoop mainRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:3]];
     [self.controllerMock verify];
 }
 

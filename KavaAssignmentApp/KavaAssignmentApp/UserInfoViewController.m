@@ -134,7 +134,20 @@
     
     [self fetchData];
     
-
+    if (!self.facebookDataFetched) {
+        self.settings = [[FBUserSettingsViewController alloc] init];
+        self.settings.delegate = self;
+        self.settings.readPermissions = self.permissions;
+        self.settings.doneButton = nil;
+        self.settings.cancelButton = nil;
+        [self presentViewController:self.settings animated:NO completion:nil];
+    }
+    
+    [self prepareInternetConnectionForIP:@"8.8.8.8" withHandler:^(BOOL result){
+        if (!result) {
+            [self showMessage:@"The application require an active internet connection" withTitle:@"Problem"];
+        }
+    }];
 
 }
 
@@ -149,7 +162,42 @@
 }
 
 - (void) prepareInternetConnectionForIP:(NSString *) ip withHandler:(void (^)(BOOL)) handler {
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_queue_t main = dispatch_get_main_queue();
+    dispatch_async(queue, ^{
+        BOOL returnValue = NO;
+        struct sockaddr_in address;
+        bzero(&address, sizeof(address));
+        address.sin_len = sizeof(address);
+        address.sin_family = AF_INET;
+        inet_pton(AF_INET,[ip cStringUsingEncoding:NSUTF8StringEncoding], &address.sin_addr);
+        //address.sin_port = htons(80);
 
+        //SCNetworkReachabilityRef reachabilityRef = SCNetworkReachabilityCreateWithName(kCFAllocatorDefault, "facebook.com");
+        SCNetworkReachabilityRef reachabilityRef = SCNetworkReachabilityCreateWithAddress(kCFAllocatorDefault, (const struct sockaddr*) &address);
+
+        if (reachabilityRef != NULL) {
+            SCNetworkReachabilityFlags flags = 0;
+            if(SCNetworkReachabilityGetFlags(reachabilityRef, &flags)){
+                NSLog(@"connection flags: %d", flags);
+                BOOL isReachable = (flags & kSCNetworkFlagsReachable);
+                BOOL connectionRequired = (flags & kSCNetworkFlagsConnectionRequired);
+                returnValue = isReachable && !connectionRequired;
+                if(!returnValue) {
+                    NSLog(@"bad connection");
+                } else {
+                    NSLog(@"good connection");
+                }
+                
+                dispatch_async(main, ^{
+                    if (handler) {
+                        handler(returnValue);
+                    }
+                });
+            }
+            CFRelease(reachabilityRef);
+        }
+    });
 
 
     
@@ -163,7 +211,96 @@
 
 - (void) facebookFetch: (void (^) (void)) successHandler onError: (void (^) (NSError *)) errorHandler
 {
+    __block int remained = 2;
+    __block int succeeded = 0;
+    __block NSError *returnError;
+    void (^success)(BOOL) = ^(BOOL isSucceeded){
+        remained--;
+        if (isSucceeded) succeeded++;
+        if (!remained) {
+            if (succeeded==2) {
+                if (successHandler) successHandler();
+            } else {
+                if (errorHandler) errorHandler(returnError);
+            }
+        }
+    };
+    
+    
 
+    [FBRequestConnection startWithGraphPath:@"/me" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+        if (!error) {
+            // Success! Include your code to handle the results here
+            NSLog(@"user info: %@", result);
+            NSLog(@"class: %@",NSStringFromClass([result class]));
+            id<FBGraphUser> me = result;
+            self.info.firstName = [me first_name];
+            self.info.lastName = [me last_name];
+            
+            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+            [formatter setDateFormat:@"MM/dd/yyyy"];
+            NSDate *date = [formatter dateFromString:[me birthday]];
+            self.info.birthday = date;
+
+            self.info.contacts = [me objectForKey:@"email"];
+            self.info.bio = [me objectForKey:@"bio"];
+            success(YES);
+            
+            
+        } else {
+            if(!returnError) returnError = error;
+            success(NO);
+            //if ([FBErrorUtility shouldNotifyUserForError:error] == YES) {
+
+            //}
+        }
+    }];
+    
+    [FBRequestConnection startWithGraphPath:@"/me/picture?redirect=0&height=128&width=128" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+        if (!error) {
+            // Success! Include your code to handle the results here
+            NSLog(@"picture: %@", result);
+            NSLog(@"class: %@",NSStringFromClass([result class]));
+            
+            NSURL *url = [NSURL URLWithString:[result valueForKeyPath:@"data.url"]];
+            
+            //dispatch_queue_t callerQueue = dispatch_get_current_queue();
+            //dispatch_queue_t downloadQueue = dispatch_queue_create("com.myapp.processsmagequeue", NULL);
+            //dispatch_async(downloadQueue, ^{
+            //NSData *imageData = [NSData dataWithContentsOfURL:url];
+            
+            NSURLSessionConfiguration *defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
+            NSURLSession *defaultSession = [NSURLSession sessionWithConfiguration: defaultConfigObject delegate: self delegateQueue: [NSOperationQueue mainQueue]];
+            
+            NSURLSessionDataTask * dataTask = [defaultSession dataTaskWithURL:url                                                             completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                if(error == nil)
+                {
+                    self.info.avatar = data;
+                    success(YES);
+                } else {
+                    success(NO);
+                }
+            }];
+            
+            [dataTask resume];
+            
+            //self.info.avatar = imageData;
+            //    dispatch_async(callerQueue, ^{
+            //        processImage(imageData);
+            //    });
+            //});
+            //dispatch_release(downloadQueue);
+            
+            
+            
+        } else {
+            //if ([FBErrorUtility shouldNotifyUserForError:error] == YES) {
+            if (!returnError) returnError = error;
+            success(NO);
+            
+        }
+    }];
+    
 
 }
 
@@ -171,21 +308,64 @@
 {
 
     
+    NSString *alertText;
+    NSString *alertTitle;
+    if ([FBErrorUtility shouldNotifyUserForError:error] == YES){
+        // Error requires people using you app to make an action outside your app to recover
+        alertTitle = @"Something went wrong";
+        alertText = [FBErrorUtility userMessageForError:error];
+        [self showMessage:alertText withTitle:alertTitle];
+        
+    } else {
+        // You need to find more information to handle the error within your app
+        if ([FBErrorUtility errorCategoryForError:error] == FBErrorCategoryUserCancelled) {
+            //The user refused to log in into your app, either ignore or...
+            alertTitle = @"Login cancelled";
+            alertText = @"You need to login to access the app";
+            [self showMessage:alertText withTitle:alertTitle];
+                
+        } else {
+            // All other errors that can happen need retries
+            // Show the user a generic error message
+            alertTitle = @"Something went wrong";
+            alertText = @"Please retry";
+            [self showMessage:alertText withTitle:alertTitle];
+        }
+    }
+    
 }
 
 - (void) loginViewControllerWillLogUserOut:(id)sender
 {
-    
+    [self showMessage:@"You should stay logged in to continue to use this application" withTitle:@"Warning"];
 }
 
 - (void) loginViewControllerDidLogUserOut:(id)sender
 {
-
+    [[UIApplication sharedApplication] performSelector:@selector(suspend)];
 }
 
 - (void) loginViewControllerDidLogUserIn:(id)sender
 {
+    if (!self.facebookDataFetched) {
+    
+        void (^errorHandler) (NSError *) = ^(NSError *error) {
+            [self fetchData];
+            NSString *alertTitle = @"Something went wrong";
+            NSString *alertText = [FBErrorUtility userMessageForError:error];
+            [self showMessage:alertText withTitle:alertTitle];
+        };
+        
+        void (^successHandler) (void) = ^{
+            self.facebookDataFetched = YES;
+            [self saveData];
+            [self.settings dismissViewControllerAnimated:YES completion:nil];
+            [self fetchData];
+        };
+        
+        [self facebookFetch:successHandler onError:errorHandler];
 
+    }
 }
 
 - (void)showMessage:(NSString *)text withTitle:(NSString *)title
