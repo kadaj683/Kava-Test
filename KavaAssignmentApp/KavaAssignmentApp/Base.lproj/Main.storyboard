@@ -16,6 +16,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="HYD-qY-Nas" kind="relationship" relationship="viewControllers" id="cbf-Ws-ymf"/>
+                        <segue destination="Z34-6P-gbO" kind="relationship" relationship="viewControllers" id="Hwi-gZ-MxT"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNP-y4-bzi" sceneMemberID="firstResponder"/>
@@ -293,6 +294,63 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="680" y="160"/>
         </scene>
+        <!--About View Controller - About me-->
+        <scene sceneID="hOw-Ta-6We">
+            <objects>
+                <tableViewController id="Wfj-gw-ah5" customClass="AboutViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="6LA-0O-nsX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="EIb-JA-U0d">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="442" id="Ffu-EQ-Sdz">
+                                        <rect key="frame" x="0.0" y="64" width="320" height="442"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ffu-EQ-Sdz" id="l6c-vg-0AR">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="441"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A46-8i-8AH">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="441"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="Wfj-gw-ah5" id="bxI-AZ-y4n"/>
+                            <outlet property="delegate" destination="Wfj-gw-ah5" id="1xv-6Q-bBN"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="About me" id="l9h-DJ-p5G">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="fyw-Ru-zem">
+                            <connections>
+                                <action selector="editClick:" destination="Wfj-gw-ah5" id="o1z-BL-7eR"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="7Nc-dO-CUx">
+                            <connections>
+                                <segue destination="KGv-Wh-Nbw" kind="push" identifier="fbSettings" id="iyP-Gs-trE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="bio" destination="A46-8i-8AH" id="BXK-v1-5Z6"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mVk-tV-MGP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1190" y="812"/>
+        </scene>
         <!--User Settings View Controller-->
         <scene sceneID="IO0-rO-TiW">
             <objects>
@@ -310,11 +368,31 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oZX-Wa-HK9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1721" y="537"/>
+            <point key="canvasLocation" x="1719" y="613"/>
+        </scene>
+        <!--Navigation Controller - About-->
+        <scene sceneID="rhh-Kt-iJG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Z34-6P-gbO" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="About" image="second" id="lH4-4O-VXh"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NGF-hH-Vrk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Wfj-gw-ah5" kind="relationship" relationship="rootViewController" id="jda-oG-pSb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kZE-zQ-qOv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="664" y="812"/>
         </scene>
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
+        <image name="second" width="30" height="30"/>
         <image name="testAvatar.png" width="128" height="128"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -322,4 +400,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="iyP-Gs-trE"/>
+    </inferredMetricsTieBreakers>
 </document>

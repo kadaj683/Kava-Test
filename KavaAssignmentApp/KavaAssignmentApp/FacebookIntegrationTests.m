@@ -10,6 +10,8 @@
 #import "FacebookSDK/FacebookSDK.h"
 #import "UserInfoViewController.h"
 #import "UserInfoViewController+Testing.h"
+#import "UserStoredDataViewController.h"
+#import "UserStoredDataViewController+Testing.h"
 #import "UserInfoTest.h"
 #import "AppDelegate.h"
 #import "OCMock/OCMock.h"
@@ -38,6 +40,7 @@ typedef enum {
     self.controller = [UserInfoViewController alloc];
     self.controllerMock = [OCMockObject partialMockForObject:self.controller];
     self.controller = [self.controller init];
+    self.controller.delegate = self.controller;
     // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
@@ -108,7 +111,8 @@ typedef enum {
     [[[self.controllerMock stub] ignoringNonObjectArgs] setFacebookDataFetched:YES];
     
     [[self.controllerMock expect] facebookFetch:OCMOCK_ANY onError:OCMOCK_ANY];
-    [self.controller loginViewControllerDidLogUserIn:self];
+    id settingsMock = [OCMockObject niceMockForClass:[FBUserSettingsViewController class]];
+    [self.controller loginViewControllerDidLogUserIn:settingsMock];
     [self.controllerMock verify];
 }
 
@@ -117,7 +121,8 @@ typedef enum {
     [[[self.controllerMock stub] ignoringNonObjectArgs] setFacebookDataFetched:YES];
     
     [[self.controllerMock expect] fetchData];
-    [self.controller loginViewControllerDidLogUserIn:self];
+    id settingsMock = [OCMockObject niceMockForClass:[FBUserSettingsViewController class]];
+    [self.controller loginViewControllerDidLogUserIn:settingsMock];
     [[NSRunLoop mainRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:3]];
     [self.controllerMock verify];
 }

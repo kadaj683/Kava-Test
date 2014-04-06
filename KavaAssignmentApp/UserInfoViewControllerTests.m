@@ -9,10 +9,15 @@
 #import <XCTest/XCTest.h>
 #import "UserInfoViewController.h"
 #import "UserInfoViewController+Testing.h"
+#import "UserStoredDataViewController.h"
+#import "UserStoredDataViewController+Testing.h"
 #import "UserInfoTest.h"
 #import "AppDelegate.h"
 #import "OCMock/OCMock.h"
 @interface UserInfoViewControllerTests : XCTestCase
+
+@property UserInfoViewController *controller;
+@property id controllerMock;
 
 @end
 
@@ -21,6 +26,10 @@
 - (void)setUp
 {
     [super setUp];
+    self.controller = [UserInfoViewController alloc];
+    self.controllerMock = [OCMockObject partialMockForObject:self.controller];
+    self.controller = [self.controller init];
+    self.controller.delegate = self.controller;
     // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
@@ -34,7 +43,6 @@
 
 - (void)testLeaveEditMode
 {
-    UserInfoViewController *controller = [[UserInfoViewController alloc] init];
     id image = [OCMockObject mockForClass:[UIImageView class]];
     id firstName = [OCMockObject mockForClass:[UITextField class]];
     id lastName = [OCMockObject mockForClass:[UITextField class]];
@@ -42,12 +50,12 @@
     id contacts = [OCMockObject mockForClass:[UITextView class]];
     id bio = [OCMockObject mockForClass:[UITextView class]];
     
-    controller.image = image;
-    controller.firstName = firstName;
-    controller.lastName = lastName;
-    controller.birthday = birthday;
-    controller.contacts = contacts;
-    controller.bio = bio;
+    self.controller.image = image;
+    self.controller.firstName = firstName;
+    self.controller.lastName = lastName;
+    self.controller.birthday = birthday;
+    self.controller.contacts = contacts;
+    self.controller.bio = bio;
     
     [[firstName expect] setEnabled:NO];
     [[lastName expect] setEnabled:NO];
@@ -55,7 +63,7 @@
     [[contacts expect] setEditable:NO];
     [[bio expect] setEditable:NO];
     
-    [controller leaveEditMode];
+    [self.controller leaveEditMode];
     
     [image verify];
     [firstName verify];
@@ -67,7 +75,6 @@
 
 - (void)testEnterEditMode
 {
-    UserInfoViewController *controller = [[UserInfoViewController alloc] init];
     id image = [OCMockObject mockForClass:[UIImageView class]];
     id firstName = [OCMockObject mockForClass:[UITextField class]];
     id lastName = [OCMockObject mockForClass:[UITextField class]];
@@ -75,19 +82,19 @@
     id contacts = [OCMockObject mockForClass:[UITextView class]];
     id bio = [OCMockObject mockForClass:[UITextView class]];
     
-    controller.image = image;
-    controller.firstName = firstName;
-    controller.lastName = lastName;
-    controller.birthday = birthday;
-    controller.contacts = contacts;
-    controller.bio = bio;
+    self.controller.image = image;
+    self.controller.firstName = firstName;
+    self.controller.lastName = lastName;
+    self.controller.birthday = birthday;
+    self.controller.contacts = contacts;
+    self.controller.bio = bio;
     
     [[firstName expect] setEnabled:YES];
     [[lastName expect] setEnabled:YES];
     [[contacts expect] setEditable:YES];
     [[bio expect] setEditable:YES];
     
-    [controller enterEditMode];
+    [self.controller enterEditMode];
     
     [image verify];
     [firstName verify];
@@ -107,9 +114,9 @@
     [[userInfo expect] contacts];
     [[userInfo expect] bio];
     
-    UserInfoViewController *controller = [[UserInfoViewController alloc] init];
-    controller.info = userInfo;
-    [controller fillInfo];
+
+    self.controller.info = userInfo;
+    [self.controller fillInfo];
     
     [userInfo verify];
     
@@ -124,14 +131,12 @@
     [[[[entity stub] classMethod] andReturn:nil] insertNewObjectForEntityForName:OCMOCK_ANY inManagedObjectContext:context];
     NSArray *noResults = @[];
     [[[context stub] andReturn:noResults] executeFetchRequest:OCMOCK_ANY error:(NSError * __autoreleasing *)[OCMArg anyPointer]];
-    UserInfoViewController *controller = [UserInfoViewController alloc];
-    id controllerMock = [OCMockObject partialMockForObject:controller];
-    controller = [controller init];
-    controller.appDelegate = appDelegate;
-    controller.managedObjectContext = context;
-    [[controllerMock expect] enterEditMode];
-    [controller fetchData];
-    [controllerMock verify];
+
+    self.controller.appDelegate = appDelegate;
+    self.controller.managedObjectContext = context;
+    [[self.controllerMock expect] enterEditMode];
+    [self.controller fetchData];
+    [self.controllerMock verify];
 }
 
 - (void) testFetchDataOtherTimes
@@ -143,14 +148,38 @@
     id info = [OCMockObject niceMockForProtocol:@protocol(UserInfoTest)];
     NSArray *results = @[info];
     [[[context stub] andReturn:results] executeFetchRequest:OCMOCK_ANY error:(NSError * __autoreleasing *)[OCMArg anyPointer]];
-    UserInfoViewController *controller = [UserInfoViewController alloc];
-    id controllerMock = [OCMockObject partialMockForObject:controller];
-    controller = [controller init];
-    controller.appDelegate = appDelegate;
-    controller.managedObjectContext = context;
-    [[controllerMock expect] leaveEditMode];
-    [controller fetchData];
-    [controllerMock verify];
+
+    self.controller.appDelegate = appDelegate;
+    self.controller.managedObjectContext = context;
+    [[self.controllerMock expect] leaveEditMode];
+    [self.controller fetchData];
+    [self.controllerMock verify];
+}
+
+- (void) testValidationOfEmptyName
+{
+    id fieldMock = [OCMockObject mockForClass:[UITextField class]];
+    [[[fieldMock stub] andReturn:@""] text];
+    self.controller.firstName = fieldMock;
+    NSError *error;
+    BOOL result = [self.controller inputInfo:&error];
+    if (result || (!result && !([error code] & 1))) {
+        XCTFail("Validation failed");
+    }
+}
+
+- (void) testValidationOfValidName
+{
+    id fieldMock = [OCMockObject mockForClass:[UITextField class]];
+    [[[fieldMock stub] andReturn:@"John"] text];
+    self.controller.firstName = fieldMock;
+    NSError *error;
+    BOOL result = [self.controller inputInfo:&error];
+    if (!result && !([error code] & 1)) {
+        XCTFail("Validation failed");
+    }
+
+    
 }
 
 @end

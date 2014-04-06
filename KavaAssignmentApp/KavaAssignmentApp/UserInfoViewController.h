@@ -8,15 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
+#import "UserStoredDataViewController.h"
 
-@interface UserInfoViewController : UITableViewController<UINavigationControllerDelegate,UITextFieldDelegate,UIImagePickerControllerDelegate,FBUserSettingsDelegate,NSURLSessionDataDelegate>
+@interface UserInfoViewController : UserStoredDataViewController<UINavigationControllerDelegate,UIImagePickerControllerDelegate,UITextFieldDelegate,UserStoredDataViewControllerDelegate>
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField;
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info;
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker;
-- (void)loginViewController:(id)sender receivedError:(NSError *)error;
-- (void)loginViewControllerWillLogUserOut:(id)sender;
-- (void)loginViewControllerDidLogUserOut:(id)sender;
-- (void)loginViewControllerDidLogUserIn:(id)sender;
+- (void)leaveEditMode;
+- (BOOL)inputInfo: (NSError* __autoreleasing *) error;
+- (void)enterEditMode;
+- (void)fillInfo;
+
 
 @end

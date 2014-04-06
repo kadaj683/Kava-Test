@@ -32,6 +32,9 @@
 		9693BD7518F08D0F001A9060 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9678A95818E87201006C8DA6 /* UserInfoViewController.m */; };
 		9693BD7718F08E4A001A9060 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9693BD7618F08E4A001A9060 /* SystemConfiguration.framework */; };
 		9693BD7818F08E58001A9060 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9693BD7618F08E4A001A9060 /* SystemConfiguration.framework */; };
+		96A64F9B18F1261900FDD703 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A64F9A18F1261900FDD703 /* AboutViewController.m */; };
+		96A64F9E18F1277C00FDD703 /* UserStoredDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A64F9D18F1277C00FDD703 /* UserStoredDataViewController.m */; };
+		96A64F9F18F1342E00FDD703 /* UserStoredDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A64F9D18F1277C00FDD703 /* UserStoredDataViewController.m */; };
 		96ECC96B18ECBBDB002D7EB0 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96ECC96A18ECBBDB002D7EB0 /* FacebookSDK.framework */; };
 		96ECC96C18ECBBDB002D7EB0 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96ECC96A18ECBBDB002D7EB0 /* FacebookSDK.framework */; };
 		96ECC96E18ECD215002D7EB0 /* FBUserSettingsViewResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 96ECC96D18ECD215002D7EB0 /* FBUserSettingsViewResources.bundle */; };
@@ -86,6 +89,12 @@
 		9689EFFD18EB0D6C00FA4E28 /* testAvatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = testAvatar.png; path = ../testAvatar.png; sourceTree = "<group>"; };
 		9693BD7318F08CF2001A9060 /* FacebookIntegrationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FacebookIntegrationTests.m; path = ../KavaAssignmentApp/FacebookIntegrationTests.m; sourceTree = "<group>"; };
 		9693BD7618F08E4A001A9060 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		96A64F9918F1261900FDD703 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		96A64F9A18F1261900FDD703 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		96A64F9C18F1277C00FDD703 /* UserStoredDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserStoredDataViewController.h; sourceTree = "<group>"; };
+		96A64F9D18F1277C00FDD703 /* UserStoredDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserStoredDataViewController.m; sourceTree = "<group>"; };
+		96A64FA018F13DE900FDD703 /* UserStoredDataViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserStoredDataViewControllerDelegate.h; sourceTree = "<group>"; };
+		96A64FA118F15BF000FDD703 /* UserStoredDataViewController+Testing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UserStoredDataViewController+Testing.h"; sourceTree = "<group>"; };
 		96ECC96A18ECBBDB002D7EB0 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		96ECC96D18ECD215002D7EB0 /* FBUserSettingsViewResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBUserSettingsViewResources.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -171,7 +180,13 @@
 				9601B49218E5881900108251 /* Supporting Files */,
 				9678A95718E87201006C8DA6 /* UserInfoViewController.h */,
 				9678A95F18E96627006C8DA6 /* UserInfoViewController+Testing.h */,
+				96A64FA118F15BF000FDD703 /* UserStoredDataViewController+Testing.h */,
 				9678A95818E87201006C8DA6 /* UserInfoViewController.m */,
+				96A64F9918F1261900FDD703 /* AboutViewController.h */,
+				96A64F9A18F1261900FDD703 /* AboutViewController.m */,
+				96A64FA018F13DE900FDD703 /* UserStoredDataViewControllerDelegate.h */,
+				96A64F9C18F1277C00FDD703 /* UserStoredDataViewController.h */,
+				96A64F9D18F1277C00FDD703 /* UserStoredDataViewController.m */,
 				9678A96718E9D079006C8DA6 /* DatePickerViewController.h */,
 				9678A96818E9D079006C8DA6 /* DatePickerViewController.m */,
 			);
@@ -348,7 +363,9 @@
 			files = (
 				9678A95918E87201006C8DA6 /* UserInfoViewController.m in Sources */,
 				9601B49C18E5881900108251 /* AppDelegate.m in Sources */,
+				96A64F9E18F1277C00FDD703 /* UserStoredDataViewController.m in Sources */,
 				9601B49818E5881900108251 /* main.m in Sources */,
+				96A64F9B18F1261900FDD703 /* AboutViewController.m in Sources */,
 				9601B4A218E5881900108251 /* KavaAssignmentApp.xcdatamodeld in Sources */,
 				9678A96918E9D079006C8DA6 /* DatePickerViewController.m in Sources */,
 				9678A95618E870A0006C8DA6 /* UserInfo.m in Sources */,
@@ -361,6 +378,7 @@
 			files = (
 				9693BD7418F08CF2001A9060 /* FacebookIntegrationTests.m in Sources */,
 				9678A95E18E87BF7006C8DA6 /* UserInfoViewControllerTests.m in Sources */,
+				96A64F9F18F1342E00FDD703 /* UserStoredDataViewController.m in Sources */,
 				9693BD7518F08D0F001A9060 /* UserInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
