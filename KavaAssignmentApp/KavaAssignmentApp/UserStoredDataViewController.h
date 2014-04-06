@@ -33,6 +33,8 @@
 - (void)fetchData;
 - (void)showMessage:(NSString *)text withTitle:(NSString *)title;
 
++ (UserInfo *)info;
++ (NSArray *)permissions;
 
 @end
 

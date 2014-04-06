@@ -16,5 +16,6 @@
 @property (nonatomic, retain) NSString * contacts;
 @property (nonatomic, retain) NSString * bio;
 @property (nonatomic, retain) NSData * avatar;
+@property (nonatomic, retain) NSString * id;
 
 @end

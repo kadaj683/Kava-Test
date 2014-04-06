@@ -40,6 +40,13 @@ static NSArray *_permissions;
     }
 }
 
++ (UserInfo *)info
+{
+    @synchronized(self) {
+        return _info;
+    }
+}
+
 + (void) init
 {
     if(!_permissions) {
@@ -48,6 +55,11 @@ static NSArray *_permissions;
 }
 
 - (NSArray *) permissions
+{
+    return _permissions;
+}
+
++ (NSArray *) permissions
 {
     return _permissions;
 }
@@ -218,6 +230,7 @@ static NSArray *_permissions;
     
 }
 
+
 - (void) saveData
 {
     NSError *saveError;
@@ -285,6 +298,7 @@ static NSArray *_permissions;
             
             self.info.contacts = [me objectForKey:@"email"];
             self.info.bio = [me objectForKey:@"bio"];
+            self.info.id = [me id];
             success(YES);
             
             
@@ -407,7 +421,6 @@ static NSArray *_permissions;
         controller.hidesBottomBarWhenPushed = NO;
         controller.view.tag = 777;
         self.hidesBottomBarWhenPushed = YES;
-        
         
     }
     

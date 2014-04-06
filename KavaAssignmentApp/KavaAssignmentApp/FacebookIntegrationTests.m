@@ -123,7 +123,7 @@ typedef enum {
     [[self.controllerMock expect] fetchData];
     id settingsMock = [OCMockObject niceMockForClass:[FBUserSettingsViewController class]];
     [self.controller loginViewControllerDidLogUserIn:settingsMock];
-    [[NSRunLoop mainRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:3]];
+    [[NSRunLoop mainRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:7]];
     [self.controllerMock verify];
 }
 

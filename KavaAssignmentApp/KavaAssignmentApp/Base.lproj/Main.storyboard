@@ -16,6 +16,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="HYD-qY-Nas" kind="relationship" relationship="viewControllers" id="cbf-Ws-ymf"/>
+                        <segue destination="nYD-uL-Lkx" kind="relationship" relationship="viewControllers" id="4qn-ax-d13"/>
                         <segue destination="Z34-6P-gbO" kind="relationship" relationship="viewControllers" id="Hwi-gZ-MxT"/>
                     </connections>
                 </tabBarController>
@@ -279,7 +280,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <scene sceneID="UAW-N8-FxG">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HYD-qY-Nas" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="1" title="My info" image="first" id="0vD-ur-PkE"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="My info" image="second" id="0vD-ur-PkE"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="SA2-oX-eNw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -388,6 +389,25 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kZE-zQ-qOv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="664" y="812"/>
+        </scene>
+        <!--Friends View Controller - Friends-->
+        <scene sceneID="gn0-jf-BXv">
+            <objects>
+                <viewController id="nYD-uL-Lkx" customClass="FriendsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0qe-Ti-qUv"/>
+                        <viewControllerLayoutGuide type="bottom" id="eht-Xy-Xdf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Rt2-eK-NwC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Friends" image="first" id="XBf-eI-GKK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wju-gF-bd7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="254" y="1224"/>
         </scene>
     </scenes>
     <resources>
