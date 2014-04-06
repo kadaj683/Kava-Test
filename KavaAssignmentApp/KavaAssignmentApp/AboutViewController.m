@@ -66,13 +66,13 @@
     self.navigationItem.leftBarButtonItem.title = @"Done";
 }
 
-- (void)fillInfo
+- (void)fillInfoFromObject:(UserInfo *)info
 {
-    self.bio.text = self.info.bio;
+    self.bio.text = info.bio;
     
 }
 
-- (BOOL)inputInfo: (NSError* __autoreleasing *) error
+- (BOOL)inputInfoToObject:(UserInfo *)info withError:(NSError *__autoreleasing *)error
 {
     NSString *header = @"Problem";
     NSString *description = nil;
@@ -90,7 +90,7 @@
     }
     
     
-    self.info.bio = self.bio.text;
+    info.bio = self.bio.text;
     return YES;
     
 }

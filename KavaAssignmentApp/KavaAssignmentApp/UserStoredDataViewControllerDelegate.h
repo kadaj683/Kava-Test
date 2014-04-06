@@ -11,8 +11,8 @@
 @protocol UserStoredDataViewControllerDelegate <NSObject>
 @optional
 - (void)leaveEditMode;
+- (BOOL)inputInfoToObject:(UserInfo *)info withError:(NSError* __autoreleasing *) error;
 - (void)enterEditMode;
-- (BOOL)inputInfo: (NSError* __autoreleasing *) error;
-- (void)fillInfo;
+- (void)fillInfoFromObject: (UserInfo *) info;
 
 @end

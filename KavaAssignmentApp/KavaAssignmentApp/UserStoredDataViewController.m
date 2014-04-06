@@ -15,6 +15,8 @@
 
 @property (readonly) NSArray *permissions;
 @property BOOL facebookDataFetched;
+@property UserInfo *info;
+
 
 @end
 
@@ -126,10 +128,10 @@ static NSArray *_permissions;
 - (void)performEditing {
     if (self.editMode) {
         NSError *inputError;
-        if ([self.delegate inputInfo:&inputError]) {
+        if ([self.delegate inputInfoToObject:self.info withError:&inputError]) {
             [self saveData];
             [self.delegate leaveEditMode];
-            [self.delegate fillInfo];
+            [self.delegate fillInfoFromObject:self.info];
         }
         
     } else {
@@ -239,7 +241,7 @@ static NSArray *_permissions;
     if (fetchedObjects.count>1) @throw [NSException exceptionWithName:@"InvalidStorageException" reason:@"Storage is corrupted" userInfo:nil];
     if(fetchedObjects.count>0) {
         self.info = [fetchedObjects objectAtIndex:0];
-        [self.delegate fillInfo];
+        [self.delegate fillInfoFromObject:self.info];
         [self.delegate leaveEditMode];
     } else {
         self.info = [NSEntityDescription insertNewObjectForEntityForName:@"UserInfo" inManagedObjectContext:self.managedObjectContext];

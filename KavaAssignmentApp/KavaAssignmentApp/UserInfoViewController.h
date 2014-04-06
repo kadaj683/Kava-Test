@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import "UserStoredDataViewController.h"
+#import "UserInfo.h"
 
 @interface UserInfoViewController : UserStoredDataViewController<UINavigationControllerDelegate,UIImagePickerControllerDelegate,UITextFieldDelegate,UserStoredDataViewControllerDelegate>
 
@@ -16,9 +17,9 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info;
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker;
 - (void)leaveEditMode;
-- (BOOL)inputInfo: (NSError* __autoreleasing *) error;
+- (BOOL)inputInfoToObject:(UserInfo *)info withError:(NSError* __autoreleasing *) error;
 - (void)enterEditMode;
-- (void)fillInfo;
+- (void)fillInfoFromObject: (UserInfo *) info;
 
 
 @end

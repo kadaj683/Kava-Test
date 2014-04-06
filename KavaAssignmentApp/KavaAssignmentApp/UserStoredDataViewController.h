@@ -19,7 +19,7 @@
 @property AppDelegate *appDelegate;
 @property BOOL editMode;
 @property (readonly) BOOL facebookDataFetched;
-@property UserInfo *info;
+//@property UserInfo *info;
 
 @property id<UserStoredDataViewControllerDelegate> delegate;
 

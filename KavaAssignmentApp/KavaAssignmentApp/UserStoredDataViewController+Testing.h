@@ -14,7 +14,7 @@
 @property NSManagedObjectContext *managedObjectContext;
 @property BOOL facebookDataFetched;
 
-@property UserInfo *info;
+//@property UserInfo *info;
 
 - (void) facebookFetch: (void (^) (void)) successHandler onError: (void (^) (NSError *)) errorHandler;
 - (void) prepareInternetConnectionForIP:(NSString *) ip withHandler:(void (^)(BOOL)) errorHandler;

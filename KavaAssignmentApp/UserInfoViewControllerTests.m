@@ -115,8 +115,8 @@
     [[userInfo expect] bio];
     
 
-    self.controller.info = userInfo;
-    [self.controller fillInfo];
+    //self.controller.info = userInfo;
+    [self.controller fillInfoFromObject:userInfo];
     
     [userInfo verify];
     
@@ -162,7 +162,8 @@
     [[[fieldMock stub] andReturn:@""] text];
     self.controller.firstName = fieldMock;
     NSError *error;
-    BOOL result = [self.controller inputInfo:&error];
+    id info = [OCMockObject niceMockForProtocol:@protocol(UserInfoTest)];
+    BOOL result = [self.controller inputInfoToObject:info withError:&error];
     if (result || (!result && !([error code] & 1))) {
         XCTFail("Validation failed");
     }
@@ -174,7 +175,8 @@
     [[[fieldMock stub] andReturn:@"John"] text];
     self.controller.firstName = fieldMock;
     NSError *error;
-    BOOL result = [self.controller inputInfo:&error];
+    id info = [OCMockObject niceMockForProtocol:@protocol(UserInfoTest)];
+    BOOL result = [self.controller inputInfoToObject:info withError:&error];
     if (!result && !([error code] & 1)) {
         XCTFail("Validation failed");
     }

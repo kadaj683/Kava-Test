@@ -11,8 +11,8 @@
 @interface AboutViewController : UserStoredDataViewController<UserStoredDataViewControllerDelegate>
 
 - (void)leaveEditMode;
-- (BOOL)inputInfo: (NSError* __autoreleasing *) error;
+- (BOOL)inputInfoToObject:(UserInfo *)info withError:(NSError* __autoreleasing *) error;
 - (void)enterEditMode;
-- (void)fillInfo;
+- (void)fillInfoFromObject: (UserInfo *) info;
 
 @end

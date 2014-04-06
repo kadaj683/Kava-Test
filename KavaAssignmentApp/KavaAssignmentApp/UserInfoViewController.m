@@ -150,18 +150,18 @@
     self.setDateButton.hidden = NO;
 }
 
-- (void)fillInfo
+- (void)fillInfoFromObject:(UserInfo *)info
 {
-    self.firstName.text = self.info.firstName;
-    self.lastName.text = self.info.lastName;
-    self.birthday.text = [NSDateFormatter localizedStringFromDate:self.info.birthday dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterNoStyle];
-    self.image.image = [UIImage imageWithData:self.info.avatar];
-    self.contacts.text = self.info.contacts;
-    self.bio.text = self.info.bio;
+    self.firstName.text = info.firstName;
+    self.lastName.text = info.lastName;
+    self.birthday.text = [NSDateFormatter localizedStringFromDate:info.birthday dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterNoStyle];
+    self.image.image = [UIImage imageWithData:info.avatar];
+    self.contacts.text = info.contacts;
+    self.bio.text = info.bio;
     
 }
 
-- (BOOL)inputInfo: (NSError* __autoreleasing *) error
+- (BOOL)inputInfoToObject:(UserInfo *)info withError:(NSError *__autoreleasing *)error
 {
     NSString *header = @"Problem";
     NSString *description = nil;
@@ -200,14 +200,14 @@
     }
 
     
-    self.info.firstName = self.firstName.text;
-    self.info.lastName = self.lastName.text;
+    info.firstName = self.firstName.text;
+    info.lastName = self.lastName.text;
     if(self.editedBirthday) {
-        self.info.birthday = self.editedBirthday;
+        info.birthday = self.editedBirthday;
     }
-    self.info.contacts = self.contacts.text;
-    self.info.bio = self.bio.text;
-    self.info.avatar = UIImagePNGRepresentation(self.image.image);
+    info.contacts = self.contacts.text;
+    info.bio = self.bio.text;
+    info.avatar = UIImagePNGRepresentation(self.image.image);
     return YES;
 
 }

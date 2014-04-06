@@ -20,9 +20,9 @@
 @property (weak, nonatomic) IBOutlet UITextView *bio;
 
 
-- (void) leaveEditMode;
-- (void) enterEditMode;
-- (void) fillInfo;
-- (void) fetchData;
+- (void)leaveEditMode;
+- (BOOL)inputInfoToObject:(UserInfo *)info withError:(NSError* __autoreleasing *) error;
+- (void)enterEditMode;
+- (void)fillInfoFromObject: (UserInfo *) info;
 
 @end
