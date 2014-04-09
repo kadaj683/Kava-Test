@@ -175,12 +175,24 @@
     self.controller.firstName = fieldMock;
     NSError *error;
     BOOL result = [self.controller inputInfo:&error];
-    if (!result && !([error code] & 1)) {
+    if (!result && ([error code] & 1)) {
         XCTFail("Validation failed");
     }
-
-    
 }
+
+
+- (void) testValidationOfInvalidMail
+{
+    id fieldMock = [OCMockObject mockForClass:[UITextField class]];
+    [[[fieldMock stub] andReturn:@"johnsmith#mail.no"] text];
+    self.controller.contacts = fieldMock;
+    NSError *error;
+    BOOL result = [self.controller inputInfo:&error];
+    if (result || (!result && !([error code] & 1<<5))) {
+        XCTFail("Validation failed");
+    }
+}
+
 
 @end
 

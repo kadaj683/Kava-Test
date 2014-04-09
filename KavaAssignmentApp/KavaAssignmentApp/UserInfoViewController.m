@@ -169,32 +169,43 @@
     
     if([self.firstName.text length]==0) {
         description = @"Your name cannot be empty";
-        code = 1<<0;
+        code |= 1<<0;
     }
     
     if([self.lastName.text length]==0) {
         description = @"Your last name cannot be empty";
-        code = 1<<1;
+        code |= 1<<1;
     }
     
     if([self.birthday.text length]==0 && self.editedBirthday==nil) {
         description = @"Please enter your birthday";
-        code = 1<<2;
+        code |= 1<<2;
     }
     
     if([self.contacts.text length]==0) {
         description = @"Please enter some contacts";
-        code = 1<<3;
+        code |= 1<<3;
     }
     
     if([self.bio.text length]==0) {
         description = @"Please write something about yourself";
-        code = 1<<4;
+        code |= 1<<4;
+    }
+    
+    if([self.contacts.text length]>0) {
+    
+        NSError *regexError;
+        NSRegularExpression *mailRegex = [NSRegularExpression regularExpressionWithPattern:@"^[a-z0-9\\-]+(\\.[a-z0-9\\-]+)*@[a-z0-9\\-]+(\\.[a-z0-9\\-]+)*\\.\\w{2,5}+$" options:NSRegularExpressionCaseInsensitive error:&regexError];
+        NSUInteger num = [mailRegex numberOfMatchesInString:self.contacts.text options:0 range:NSMakeRange(0, [self.contacts.text length])];
+        if (num==0) {
+            description = @"Please make sure your contacts contain an email";
+            code |= 1<<5;
+        }
     }
     
     if (description) {
         [self showMessage:description withTitle:header];
-        NSError *returnError = [NSError errorWithDomain:NSInvalidArgumentException code:1 userInfo:@{NSLocalizedDescriptionKey: description}];
+        NSError *returnError = [NSError errorWithDomain:NSInvalidArgumentException code:code userInfo:@{NSLocalizedDescriptionKey: description}];
         *error = returnError;
         return NO;
     }
